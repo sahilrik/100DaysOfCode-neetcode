@@ -1,0 +1,18 @@
+LEETCODE 167 SUMTWO 2 SORTED
+
+Input: numbers = [2,7,11,15], target = 9
+Output: [1,2]
+Explanation: The sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2. We return [1, 2].
+
+Explanation:
+
+two pointers starting from the two extreams of the array 
+
+
+while(nums[l] + nums[r] != target){
+    if(nums[l] + nums[r] < target){
+        l--                       // l-- because since sorted r is already at the largets digit and to reach a greater numeric value we need to increase l.
+    }else{
+        r--
+    }
+}

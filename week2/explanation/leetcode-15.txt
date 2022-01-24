@@ -1,0 +1,26 @@
+3 SUM LEETCODE 15
+
+Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+
+Notice that the solution set must not contain duplicate triplets.
+
+Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+
+
+EXPALNATION:   ---------------(using two pointer)
+
+we take the first element as fixed and apply twosum2 in the rest
+
+imagine: a + b + c = 0
+
+here we consider 'a' to be the first emelent(for 1st iteration) and try to find the rest using twosum2 algo
+
+
+for(int i = 0; i<nums.size()-2; i++)  --------nums.size()-2 cause the first element in the array we consider as found then we search for rest
+
+
+
+if(i>0 && nums[i]==nums[i-1]){
+            continue;               ------->so that we dont compute for suplicate
+        }                           consider : [-3, -3, .........]---- in the first iterartion we computed for -3 so there is no need to compute it again

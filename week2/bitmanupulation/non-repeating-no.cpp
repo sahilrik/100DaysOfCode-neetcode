@@ -20,8 +20,8 @@ vector<int> singleNumber(vector<int> nums){
     {
         XOR = XOR^nums[i];              //bitwise xor -- ^
     }
-    int right_bit = XOR & ~(XOR-1);
-    int x,y;
+    int right_bit = XOR & ~(XOR-1);     //For any integer n, bitwise complement of n will be -(n+1)--2's compliment
+    int x,y;                            //https://www.programiz.com/cpp-programming/bitwise-operators
     x=y=0;
     for (int i = 0; i < nums.size(); i++)
     {

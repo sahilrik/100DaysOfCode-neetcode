@@ -15,6 +15,18 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+int findPosition2(int n){
+        int count = 0;
+    if(n == 0){
+        return -1;
+    }else if((n&(n-1))==0){
+        count =log2(n)+1;
+        return count;
+    }else{
+        return -1;
+    }
+}
+
 int findPosition(int n){
     int count = 0;
     if(n == 0){
@@ -35,7 +47,7 @@ int main(){
     int n;
     cout<<"enter the digit"<<endl;
     cin>>n;
-    int result = findPosition(n);
+    int result = findPosition2(n);
     cout<<"result : "<<result<<endl;
     return 0;
 }

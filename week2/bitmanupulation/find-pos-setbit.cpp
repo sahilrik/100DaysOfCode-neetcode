@@ -15,12 +15,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int findPosition2(int n){
+int findPosition2(int n){           // search for the time complexity of log2() function 
         int count = 0;
     if(n == 0){
         return -1;
     }else if((n&(n-1))==0){
-        count =log2(n)+1;
+        count =log2(n)+1;       // mathematical method 
         return count;
     }else{
         return -1;
@@ -31,8 +31,8 @@ int findPosition(int n){
     int count = 0;
     if(n == 0){
         return -1;
-    }else if((n&(n-1))==0){
-        while (n)
+    }else if((n&(n-1))==0){         // only 2^n type integers have one 1s in them 
+        while (n)                   // eg 4 - 100  8 - 1000
         {
             count++;
             n=n>>1;

@@ -13,8 +13,8 @@ using namespace std;
 bool isPowerofTwo(int n){
     if(n==0){
         return false;
-    }else if ((n&(n-1))==0)
-    {
+    }else if ((n&(n-1))==0)         //consider N = 4 ---> 1000 and N-1 = 3--->0011
+    {                                //now N&(N-1) = 0000 (ie if power of two then the and of N and N-1 gives 0)    
        return true; 
     }else{
         return false;

@@ -12,7 +12,7 @@ using namespace std;
 
 vector<string> AllPossibleStrings(string str){
     vector<string> output;
-    int n = pow(2,str.length());
+    int n = pow(2,str.length());  // if n is the length of the string then the subsequence is 2^n-1
     for (int i = 1; i < n; i++)
     {
         int x = i;
@@ -20,7 +20,7 @@ vector<string> AllPossibleStrings(string str){
         string c = "";
         while (x)
         {
-            if(x&1){
+            if(x&1){        //cheching which position in the bit is 1 and the position which is one we put the char there.
                 c = c + str[y];
             }
             y++;

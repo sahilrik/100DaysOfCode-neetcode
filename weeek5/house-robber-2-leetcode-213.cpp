@@ -8,15 +8,9 @@
 
 #include<bits/stdc++.h>
 using namespace std;
-
-int rob(vector<int> nums){
-    int nn = nums.size();
-    return  max(helper(nn- 2), helper(nums.size() - 1));
-}
-
-int helper(vector<int>& nums){
+int helper(vector<int> nums){
     int prev1 = 0;
-    int prev2 = 0;
+    int prev2 = 0;      // [prev2, prev1, .......]
     for(auto nums : nums){
         const int dp = max(prev1 , prev2 + nums);
         prev2 = prev1;
@@ -24,6 +18,15 @@ int helper(vector<int>& nums){
     }
     return prev1;
 }
+
+int rob(vector<int>& nums){
+    
+    int maxx = max(helper(vector<int>(nums.begin(),nums.end()-1)), helper(vector<int>(nums.begin()+1, nums.end())));
+    return maxx;
+}
+
+
+
 
 int main(){
     vector<int> nums;
